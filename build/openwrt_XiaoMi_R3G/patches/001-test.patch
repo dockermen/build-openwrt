@@ -1,0 +1,29 @@
+diff --git a/usr/lib/lua/luci/view/admin_status/index.htm b/usr/lib/lua/luci/view/admin_status/index.htm
+index e6bc6c7..08d89f6 100755
+--- a/usr/lib/lua/luci/view/admin_status/index.htm
++++ b/usr/lib/lua/luci/view/admin_status/index.htm
+@@ -694,13 +694,14 @@
+ 		<tr><td width="33%"><%:Architecture%></td><td><%=pcdata(boardinfo.system or "ARMv8 Processor")%> x <%=luci.sys.exec("cat /proc/cpuinfo | grep 'processor' | wc -l") or "1"%></td></tr>
+ 		<tr><td width="33%"><%:Firmware Version%></td><td>
+ 			<%=pcdata(ver.distname)%> <%=pcdata(ver.distversion)%> /
+-			<%=pcdata(ver.luciname)%> (<%=pcdata(ver.luciversion)%>)
++			(<a href="https://github.com/aabbcc582/abc">by Zhilong</a>)
+ 		</td></tr>
+ 		<tr><td width="33%"><%:Kernel Version%></td><td><%=unameinfo.release or "?"%></td></tr>
+ 		<tr><td width="33%"><%:Local Time%></td><td id="localtime">-</td></tr>
+ 		<tr><td width="33%"><%:Uptime%></td><td id="uptime">-</td></tr>
+ 		<tr><td width="33%"><%:Load Average%></td><td id="loadavg">-</td></tr>
+ 		<tr><td width="33%"><%:CPU usage (%)%></td><td id="cpuusage">-</td></tr>
++		<tr><td width="33%"><%:博客 %></td><td><a href="https://github.com/aabbcc582">Github</a></td>-</td></tr>
+ 	</table>
+ </fieldset>
+ 
+@@ -783,7 +784,7 @@
+ <% end %>
+ <% end %>
+ 
+-<% if has_dsl then %>s
++<% if has_dsl then %>
+ <fieldset class="cbi-section">
+        <legend><%:DSL%></legend>
+        <table width="100%" cellspacing="10">
