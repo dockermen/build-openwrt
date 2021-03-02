@@ -1,7 +1,2 @@
-#!/bin/bash
-# Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
-#
-
-# 修改openwrt登陆地址,把下面的192.168.2.2修改成你想要的就可以了
-sed -i 's/192.168.1.1/192.168.2.2/g' package/base-files/files/bin/config_generate
-
+sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
+sed -i '/uci commit system/i\uci set system.@system[0].hostname='Edge'' package/lean/default-settings/files/zzz-default-settings
