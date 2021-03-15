@@ -11,3 +11,4 @@
 #
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
+sed -i '$a src-git ngrokc https://github.com/AlexZhuo/luci-app-ngrokc' feeds.conf.default
